@@ -9,14 +9,14 @@
 	}
 
 	//Get Values
-	$destinationId = $_POST["country"];
-	$filepath = $_POST["date"];
+	$destinationId = $_POST["destination"];
+	$filepath = $_POST["filepath"];
 	$name = $_POST["name"];
-	$isCover = $_POST["isCover"]
+	$isCover = $_POST["isCover"];
 
 	//Insert into database
-	$stmt = $conn->prepare("INSERT INTO destinations (destinationId, filepath, name, isCover) VALUES (?, ?, ?, ?)");
-	$stmt->bind_param('sss', $destinationId , $filepath, $name, $isCover);
+	$stmt = $conn->prepare("INSERT INTO images (destinationId, filepath, name, isCover) VALUES (?, ?, ?, ?)");
+	$stmt->bind_param('ssss', $destinationId , $filepath, $name, $isCover);
 	$stmt->execute();
 
 	$conn->close();
