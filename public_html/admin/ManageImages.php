@@ -32,7 +32,7 @@ $conn->close();
 ?>
 
 	<h2>Add new image</h2>
-	<form action="../../resources/templates/AddImage.php" method="post">
+	<form action="../../resources/templates/AddImage.php" method="post" enctype="multipart/form-data">
 			<span>Destination</span>
 			<?php
 				$conn = new mysqli($config['db']['db1']['host'], $config['db']['db1']['username'], $config['db']['db1']['password'], $config['db']['db1']['dbname']);
@@ -43,19 +43,17 @@ $conn->close();
 					    // output data of each row
 					    echo '<select name="destination">';
 					    while($row = $destinationResult->fetch_assoc()) {
-					        echo '<option value='.$row["pkId"].'>'.$row["country"] .$row["area"].'</option>';
+					        echo '<option value='.$row["pkId"].'>'.$row["country"] . " - " .$row["area"].'</option>';
 					    }
 					    echo '</select>';
 					}
 				$conn->close();
 			?>
-			<span>Name</span>
-			<input type="text" name="name">
 			<span>Set as coverimage for destination</span>
 			<input type="checkbox" name="isCover" value="1">
 			<span>Image</span>
-			<input type="file" name="filepath">
-			<input type="submit">
+			<input type="file" name="file">
+			<input type="submit" name="submit" value="Submit">
 	</form>
  </body>
 </html>

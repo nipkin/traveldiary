@@ -18,6 +18,9 @@
 	$sql = 'SELECT * FROM destinations';
 	$result = mysqli_query($conn, $sql);
 
+	$sqlImages = 'SELECT filePath FROM images';
+	$imagesResult = mysqli_query($conn, $sqlImages);
+
 
 	if ($result->num_rows > 0) {
 	    // output data of each row

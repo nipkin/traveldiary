@@ -35,7 +35,7 @@ $conn->close();
 	<form action="../../resources/templates/AddDestination.php" method="post">
 			<span>Country</span>
 			<input type="text" name="country">
-			<span>Place</span>
+			<span>Area</span>
 			<input type="text" name="area">
 			<span>Date(yyyy-mm-dd)</span>
 			<input type="text" name="date">
