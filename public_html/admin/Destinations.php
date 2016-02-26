@@ -1,11 +1,7 @@
-<html>
- <head>
-  <title>PHP Test</title>
- </head>
- <body>
 <?php    
 // load up your config file
-	require_once("../../resources/config.php");	 
+	require_once("../../resources/config.php");
+	include("includes/AdminHeader.php");	 
 ?>
 
 <?php 
@@ -21,10 +17,12 @@
 
 	if ($result->num_rows > 0) {
 	    // output data of each row
-	    echo "<h2>Current destinations</h2> <br>";
+	    echo "<h2>Current destinations</h2>";
+	    echo '<ul class="destination-list">';
 	    while($row = $result->fetch_assoc()) {
-	        echo 'Country: ' . $row["country"]. ' - Area: ' . $row["area"]. ' - Date: ' . $row["date"]. '<button id='.$row["pkId"].'>Delete</button>' . '<br>';
+	        echo '<li class="destination-list__item"><a href="ManageDestination.php?destination=' . $row["pkId"] . '">Country: ' . $row["country"] . ' - Area: ' . $row["area"] . '</a></li>';
 	    }
+	    echo "</ul>";
 	} else {
 	    echo "0 Destinations at the moment";
 	}
@@ -32,14 +30,14 @@ $conn->close();
 ?>
 
 	<h2>Add new destination</h2>
-	<form action="../../resources/templates/AddDestination.php" method="post">
-			<span>Country</span>
+	<form class="destinations-add-new" action="../../resources/templates/AddDestination.php" method="post">
+			<span>Country:</span>
 			<input type="text" name="country">
 			<span>Area</span>
 			<input type="text" name="area">
 			<span>Date(yyyy-mm-dd)</span>
 			<input type="text" name="date">
-			<input type="submit">
+			<input type="submit" value="Save">
 	</form>
- </body>
-</html>
+
+<?php include("includes/AdminFooter.php"); ?>

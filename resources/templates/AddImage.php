@@ -64,7 +64,7 @@
 
 					//Get Values
 					$destinationId = $_POST["destination"];
-					$file = (string)$location . (string)$name;
+					$file = (string)$name;
 					$isCover = 0;
 					if(isset($_POST["isCover"]) && $_POST["isCover"] == 1) {
 						$isCover = 1;

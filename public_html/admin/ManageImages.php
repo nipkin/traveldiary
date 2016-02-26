@@ -1,11 +1,7 @@
-<html>
- <head>
-  <title>PHP Test</title>
- </head>
- <body>
 <?php    
 // load up your config file
-	require_once("../../resources/config.php");	 
+	require_once("../../resources/config.php");
+	include("includes/AdminHeader.php");		 
 ?>
 
 <?php 
@@ -23,7 +19,12 @@
 	    // output data of each row
 	    echo "<h2>Current images</h2> <br>";
 	    while($row = $result->fetch_assoc()) {
-	        echo ' - Date: ' . $row["name"]. '<button id='.$row["pkId"].'>Delete</button>' . '<br>';
+	    	$destinationId = $row["destinationId"];
+
+			$destination_info = mysqli_query($conn, "SELECT country, area FROM destinations WHERE pkId = '$destinationId' LIMIT 1");
+			$destination_info_row = mysqli_fetch_assoc($destination_info);
+
+	        echo ' - Country: ' . $destination_info_row["country"] . ', Area: ' . $destination_info_row["area"] . '<button id="'.$row["pkId"].'">Delete</button>' . '<br>';
 	    }
 	} else {
 	    echo "0 Images at the moment";
@@ -55,5 +56,5 @@ $conn->close();
 			<input type="file" name="file">
 			<input type="submit" name="submit" value="Submit">
 	</form>
- </body>
-</html>
+</div>
+<?php include("includes/AdminFooter.php"); ?>

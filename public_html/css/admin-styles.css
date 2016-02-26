@@ -1,0 +1,116 @@
+/******* ADMIN MENU *******/
+.admin-menu {
+	width: 650px;
+	margin: 0 auto;
+	position: relative;
+	padding-top: 50px;
+}
+
+.admin-menu-item {
+	display: block;
+	text-align: center;
+	width: 300px;
+	float: right;
+	text-decoration: none;
+	background: #3f9ff2;
+	padding: 65px 0;
+	color: #fff;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+	border-radius: 50px;
+}
+
+.admin-menu-item img {
+	width: 100%;
+}
+
+.admin-menu-item:first-child {
+	float: left;
+}
+
+/******* ADMIN PAGE *******/
+.admin-container {
+	width: 1080px;
+	margin: 0 auto;
+	font-family: Arial, sans-serif;
+}
+
+.destination-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	width: 100%; 
+}
+
+.destination-list__item {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.destination-list__item a {
+	display: block;
+	background: #3f9ff2;
+	text-decoration: none;
+	color: #fff;
+	padding: 25px 15px;
+	border-radius: 20px;
+	font-weight: bold;
+	font-size: 16px;
+
+}
+.destination-list__item a:hover {
+	-webkit-transition: box-shadow 0.2s; 
+	transition: box-shadow 0.2s; 
+	-webkit-box-shadow: -1px 3px 26px -6px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 3px 26px -6px rgba(0,0,0,0.75);
+	box-shadow: -1px 3px 26px -6px rgba(0,0,0,0.75);
+}
+
+.destinations-add-new span {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.destinations-add-new input {
+	margin-bottom: 10px;
+}
+
+.manage-desitnation {
+	padding: 30px 0;
+	border-bottom: 1px solid #e2e2e2;
+	border-top: 1px solid #e2e2e2;
+}
+
+.manage-desitnation h2,
+.manage-desitnation-images h2
+ {
+	margin: 0 0 20px 0;
+}
+
+.manage-desitnation span {
+	display: block;
+}
+
+.manage-desitnation-images {
+	padding: 30px 0;
+	border-bottom: 1px solid #e2e2e2;
+}
+
+.manage-desitnation-images img {
+	width: 200px;
+	display: inline-block;
+	margin-right: 15px;
+}
+
+.manage-destination-new-image span {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.manage-destination-new-image input,
+.manage-destination-new-image select {
+	margin-bottom: 10px;
+}
+
